@@ -1,0 +1,47 @@
+<%- include('header') %>
+
+      <div class="container">
+        <div class="row">
+          
+          <div id="signupbox" style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3  col-sm-offset-2">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <div class="panel-title">Edit Password Category </div>
+                <div style="float:right; font-size: 85%; position:relative;top:-10px">
+              </div>
+            </div>
+              <div class="panel-body">
+                <form action="/passCategory/edit/" class="form-horizontal" role="form" method="post">
+                    <input type="hidden" value="<%= id %>" name="id">
+                  <div class="form-group">
+                    <%  if(errors !=''){ %>
+                    <p style="text-align: center; color: red;"><%= errors.passwordCategory.msg %></p>
+                    <%   }  %>
+
+                      <%  if(success !=''){ %>
+                    <p style="text-align: center; color: green;"><%= success  %></p>
+                    <%   }  %>
+                    <label for="username" class="col-md-3 control-label">Category  Name</label>
+                    <div class="col-md-9">
+                      <input type="text" class="form-control" value="<%= records.password_category %>" name="passwordCategory" placeholder=" Enter Your Password Category Name">
+                    </div>
+                  </div>
+  
+
+      
+                  <div class="form-group">
+                    <div class="col-md-offset-3 col-md-9">
+                      <input type="Submit" type="button" class="btn btn-info" value="Update Category" name="submit"> 	        	
+                    </div>
+                   </div>
+                   <p class="text-center">Already have an account  <a href="/passCategory">View All Categories List</a></p> 
+       
+                   
+                    </form>
+                  </div>			
+             </div>		
+           </div>
+         </div>
+      </div>    
+  </body>
+</html>
